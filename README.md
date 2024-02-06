@@ -27,6 +27,10 @@ Projeto realizado para aprender a utilização do Router Dom e styled-components
   <img alt="DIO Clone" src="github/user.png" width="100%">
 </p>
 
+<p align="center">
+  <img alt="DIO Clone" src="github/register.png" width="100%">
+</p>
+
 ---
 ## 🚀 Tecnologias
 
