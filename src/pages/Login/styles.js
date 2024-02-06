@@ -48,6 +48,7 @@ export const ForgotCreateText = styled.a`
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
+  cursor: pointer;
 
   color: #e5e044;
 

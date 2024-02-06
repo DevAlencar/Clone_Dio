@@ -6,11 +6,6 @@ export const InputContainer = styled.div`
   height: 30px;
   border-bottom: 1px solid #3b3450;
 
-  color: #ffffff;
-  font-family: "Open Sans";
-  font-size: 18px;
-  font-weight: 400;
-
   display: flex;
   align-items: center;
   margin-bottom: 20px;
@@ -24,9 +19,16 @@ export const InputText = styled.input`
   background-color: transparent;
   border: 0;
   height: 30px;
+  min-width: 200px;
 
   color: #ffffff;
   font-family: "Open Sans";
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 400;
+`;
+
+export const ErrorText = styled.p`
+  color: #ff0000;
+  font-size: 12px;
+  margin: 5px 0;
 `;

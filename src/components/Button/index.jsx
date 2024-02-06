@@ -2,9 +2,9 @@ import React from "react";
 
 import { ButtonContainer } from "./styles";
 
-export default function Button({ title, variant = "primary", onClick }) {
+export default function Button({ type, title, variant = "primary", onClick }) {
   return (
-    <ButtonContainer variant={variant} onClick={onClick}>
+    <ButtonContainer type={type} variant={variant} onClick={onClick}>
       {title}
     </ButtonContainer>
   );
