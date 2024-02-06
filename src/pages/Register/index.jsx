@@ -51,7 +51,7 @@ export default function Login() {
 
   const onSubmit = (formData) => {
     try {
-      const {} = api.post("/users", {
+      api.post("/users", {
         name: formData.name,
         email: formData.email,
         password: formData.password,

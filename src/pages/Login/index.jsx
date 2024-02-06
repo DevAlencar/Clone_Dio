@@ -65,10 +65,6 @@ export default function Login() {
     }
   };
 
-  const handleClickSignIn = () => {
-    //
-  };
-
   return (
     <>
       <Header />
