@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import Input from "../../components/Input";
 
 import { MdEmail, MdLock } from "react-icons/md";
+import { IoMdPerson } from "react-icons/io";
 
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -15,15 +16,17 @@ import {
   Container,
   Title,
   Column,
-  Row,
   TitleLogin,
   Wrapper,
   SubtitleLogin,
-  ForgotCreateText,
+  LoginText,
+  TextContent,
+  BottomTextContainer,
 } from "./styles";
 
 const schema = yup
   .object({
+    name: yup.string().required("Campo obrigatório"),
     email: yup
       .string()
       .email("E-mail não válido")
@@ -46,27 +49,17 @@ export default function Login() {
 
   console.log(errors);
 
-  const onSubmit = async (formData) => {
+  const onSubmit = (formData) => {
     try {
-      const { data } = await api.get("/users", {
-        params: {
-          email: formData.email,
-          password: formData.password,
-        },
+      const {} = api.post("/users", {
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
       });
-      if (data.length === 1) {
-        navigate("/feed");
-      } else {
-        alert("usuário inválido");
-      }
-      console.log("retorno api", data);
+      navigate("/login");
     } catch {
       alert("Houve um erro no servidor");
     }
-  };
-
-  const handleClickSignIn = () => {
-    //
   };
 
   return (
@@ -85,6 +78,13 @@ export default function Login() {
           <Wrapper>
             <form onSubmit={handleSubmit(onSubmit)}>
               <Input
+                ErrorMsg={errors?.name?.message}
+                control={control}
+                name="name"
+                Icon={<IoMdPerson />}
+                PlaceHolder={"Nome Completo"}
+              />
+              <Input
                 ErrorMsg={errors?.email?.message}
                 control={control}
                 name="email"
@@ -96,17 +96,27 @@ export default function Login() {
                 control={control}
                 name="password"
                 Icon={<MdLock />}
-                PlaceHolder={"Senha"}
+                PlaceHolder={"Password"}
                 type="password"
               />
-              <Button title={"Entrar"} variant="secondary" type="submit" />
+              <Button
+                title={"Criar minha conta"}
+                variant="secondary"
+                type="submit"
+              />
             </form>
-            <Row>
-              <ForgotCreateText>Esqueci minha senha</ForgotCreateText>
-              <ForgotCreateText variant="secondary" href="/register">
-                Criar conta
-              </ForgotCreateText>
-            </Row>
+            <BottomTextContainer>
+              <TextContent>
+                Ao clicar em "criar minha conta grátis", declaro que aceito as
+                Políticas de Privacidade e os Termos de Uso da DIO.
+              </TextContent>
+              <LoginText>
+                Já tenho conta.{" "}
+                <LoginText variant="secondary" href="/login">
+                  Fazer login
+                </LoginText>
+              </LoginText>
+            </BottomTextContainer>
           </Wrapper>
         </Column>
       </Container>

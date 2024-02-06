@@ -23,8 +23,9 @@ export const InputText = styled.input`
 
   color: #ffffff;
   font-family: "Open Sans";
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
+  font-style: ;
 `;
 
 export const ErrorText = styled.p`

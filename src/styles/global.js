@@ -26,6 +26,9 @@ export const GlobalStyle = createGlobalStyle`
     footer, header, hgroup, menu, nav, section {
         display: block;
     }
+    a{
+        text-decoration: none;
+    }
     body {
         line-height: 1;
         background-color: #1E192C;

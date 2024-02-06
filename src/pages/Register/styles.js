@@ -42,47 +42,45 @@ export const SubtitleLogin = styled.p`
   line-height: 25px;
 `;
 
-export const ForgotCreateText = styled.a`
+export const LoginText = styled.a`
   font-family: "Open Sans";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 14px;
   line-height: 19px;
   cursor: pointer;
+  margin: 10px 0;
 
-  color: #e5e044;
+  color: #ffffff;
 
   ${({ variant }) =>
     variant === "secondary" &&
     css`
-      color: #e230d7;
+      color: #23dd7a;
     `}
 `;
 
 export const Wrapper = styled.div`
-  max-width: 300px;
+  max-width: 280px;
 `;
 
 export const Column = styled.div`
   flex: 1;
 `;
 
-export const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-`;
-
 export const TextContent = styled.p`
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  width: 420px;
-  margin-bottom: 20px;
-  line-height: 22px;
+  font-size: 18px;
+  width: 340px;
+  margin-top: 25px;
+  line-height: 24.51px;
 
   color: #ffffff;
+`;
+
+export const BottomTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
